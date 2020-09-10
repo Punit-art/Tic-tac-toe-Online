@@ -1,0 +1,83 @@
+<Gerenciador>:
+	Menu:
+		name:'menu'
+	Entrar:
+		name:'entrar'
+	Jogo:
+		name:'jogo'
+
+<Menu>:
+	BoxLayout:
+		orientation:'vertical'
+		padding:20
+		spacing:20
+		Image:
+			source:'logo.jpg'
+			size_hint_y: None
+			height:70
+			allow_stretch:True
+		Label:
+			text:"Criado por Khennedy"
+		Button:
+			text:'Criar Jogo'
+			on_release: app.root.current = 'criar'
+		Button:
+			text: 'Entrar em jogo'
+			on_release: app.root.current = 'entrar'
+		Button:
+			text: 'Sair'
+			on_release: app.stop()
+<Entrar>:
+	name:'entrar'
+	orientation:'vertical'
+	BoxLayout:
+		ActionBar:
+			ActionView:
+				ActionPrevious:
+					title:'Tarefas'
+					on_release:app.root.current = 'menu'
+				ActionButton:
+					icon:'logo.jpg'
+	BoxLayout:
+		orientation:'vertical'
+		Label:
+			text:'Digite o número da sala'
+		TextInput:
+			id:sala
+		Button:
+			text:'Entrar'
+			on_release:root.entrar_sala()
+<Jogo>
+	name:'jogo'
+	BoxLayout:
+		orientation:'vertical'
+		BoxLayout:
+			Button:
+				id:id_1
+				on_press:root.jogada('1')
+			Button:
+				id:id_2
+				on_press:root.jogada('2')
+			Button:
+				id:id_3
+				on_press:root.jogada('3')
+		BoxLayout:
+			Button:
+				id:id_4
+				on_press:root.jogada('4')
+			Button:
+				id:id_5
+				on_press:root.jogada('5')
+			Button:
+				id:id_6
+				on_press:root.jogada('6')
+		BoxLayout:
+			Button:
+				id:id_7
+				on_press:root.jogada('7')
+			Button:
+				id:id_8
+				on_press:root.jogada('8')
+			Button:
+				id:id_9
+				on_press:root.jogada('9')
